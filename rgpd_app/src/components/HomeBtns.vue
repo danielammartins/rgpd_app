@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <button class="btnHome" id="btnGerar" @click="goToQuestions">
-      Gerar Pedido de Consentimento/Nota Informativa
+      Gerar Pedido de Consentimento / Nota Informativa
     </button>
     <button class="btnHome" id="btnConsultar">
       <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32016R0679&from=PT" target="_blank">
@@ -19,13 +19,13 @@
     justify-content: center;
     margin: auto;
     margin-top: 40vh;
-    
   }
+
   .btnHome {
     display: inline-block;
     background-color: white;
     color: black;
-    border: 2px solid #e7e7e7;
+    border: 2px solid #114c5f4f;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -37,13 +37,24 @@
   }
 
   .btnHome:hover {
-    background-color: #555555;
+    background-color: #114b5f;
+    color: white;
+  }
+
+  .btnHome:hover a {
     color: white;
   }
 
   #btnGerar {
     font-weight: bold;
   }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      margin-top: 30vh;
+      width: 80vw;
+    }  
+}
 </style>
   
 <script>

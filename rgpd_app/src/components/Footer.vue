@@ -10,7 +10,9 @@
 </template>
 <style>
 footer {
-  background-color: rgba(145, 214, 199, 0.548);
+  background-color:#114b5f;
+  /*background-color:#094234b9;*/
+  color: #fff;
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -18,5 +20,9 @@ footer {
   padding-bottom: 25px;
   text-align: center;
   line-height: 2.5rem;
+}
+
+.fa {
+  color: #fff;
 }
 </style>

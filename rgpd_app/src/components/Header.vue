@@ -1,9 +1,5 @@
 <template>
-
-  <header>
-    <button class="btnSair" type="button">Sair</button>
-  </header>
-  
+  <button class="btnSair" type="button">Sair</button>
 </template>
 
 <style>
@@ -23,6 +19,7 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    z-index: 99;
   }
 
   .btnSair:hover {

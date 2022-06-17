@@ -5,7 +5,7 @@
     </button>
     <button class="btnHome" id="btnConsultar">
       <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32016R0679&from=PT" target="_blank">
-        Consulta aqui o Regulamento Geral de Proteção de Dados
+        Consultar o Regulamento Geral de Proteção de Dados
       </a>
     </button>
   </div>

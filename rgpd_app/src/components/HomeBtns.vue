@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 40vh;
+    margin-top: 35vh;
   }
 
   .btnHome {

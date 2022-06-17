@@ -20,6 +20,7 @@ footer {
   padding-bottom: 25px;
   text-align: center;
   line-height: 2.5rem;
+  font-family: 'sans serif';
 }
 
 .fa {

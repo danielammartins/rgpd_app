@@ -1,10 +1,11 @@
+<script setup>
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css'
+</script>
+
 <template>
-  <div class="cont">
-    oi
-  </div>
+  <QuillEditor toolbar="minimal">
+    
+  </QuillEditor>
+
 </template>
-<style scoped>
-  .cont {
-    border: 2px solid red;
-  }
-</style>

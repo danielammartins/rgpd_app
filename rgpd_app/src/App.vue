@@ -2,6 +2,9 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import HomeBtns from './components/HomeBtns.vue'
+import Questions from './components/Questions.vue'
+import TextEditor from './components/TextEditor.vue'
+import Questionaire from './components/Questionaire.vue'
 import YesOrNo from './components/yesOrNoQuestions.vue'
 
 export default {
@@ -23,8 +26,11 @@ export default {
     "app-header": Header,
     "app-footer": Footer,
     "home-btns": HomeBtns,
-    "yes-no": YesOrNo
-}
+    "yes-no": YesOrNo,
+    "questions": Questions,
+    "text-editor": TextEditor,
+    "questionaire": Questionaire
+  }
 }
 </script>
 
@@ -37,7 +43,7 @@ export default {
     </section>
 
     <section v-if="inQuestions">
-      <yes-no></yes-no>
+      <questionaire></questionaire>
     </section>
 
     <app-footer></app-footer>
@@ -45,17 +51,9 @@ export default {
   </template>
 
 <style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: monospace;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
 
 </style>

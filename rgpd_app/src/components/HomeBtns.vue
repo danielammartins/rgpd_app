@@ -28,7 +28,7 @@ export default {
 
 </template>
 
-<style>
+<style scoped>
   .container {
     width: fit-content;
     display: flex;

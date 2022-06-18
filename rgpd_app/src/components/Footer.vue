@@ -26,4 +26,8 @@ footer {
 .fa {
   color: #fff;
 }
+
+.fa:hover {
+  color: #73D1F0;
+}
 </style>

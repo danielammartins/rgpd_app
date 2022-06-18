@@ -1,15 +1,33 @@
+<script>
+export default {
+  props: {
+    inQuestions: Boolean
+  },
+  methods: {
+    toggle() {
+      this.$emit('toggleInQuestions');
+    }
+  }
+}
+</script>
+
 <template>
+
   <div class="container">
-    <button class="btnHome" id="btnGerar" @click="goToQuestions">
+
+    <button class="btnHome" id="btnGerar" @click="toggle()">
       Gerar Pedido de Consentimento / Nota Informativa
     </button>
+
     <button class="btnHome" id="btnConsultar">
       <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32016R0679&from=PT" target="_blank">
         Consultar o Regulamento Geral de Proteção de Dados
       </a>
     </button>
   </div>
+
 </template>
+
 <style>
   .container {
     width: fit-content;
@@ -56,10 +74,3 @@
     }  
 }
 </style>
-  
-<script>
-
-const goToQuestions = () => {
-	router.push("/questions");
-	}
-</script>

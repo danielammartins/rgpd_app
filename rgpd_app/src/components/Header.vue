@@ -1,5 +1,19 @@
+<script>
+export default {
+  props: {
+    inQuestions: Boolean
+  },
+  methods: {
+    toggle() {
+      this.$emit('toggleInQuestions');
+    }
+  }
+}
+</script>
+
 <template>
-  <button class="btnSair" type="button">Sair</button>
+  <button class="btnSair" type="button" @click="toggle()">Sair</button>
+
 </template>
 
 <style>
@@ -9,7 +23,7 @@
     top: 8vh;
     background-color: white;
     color: black;
-    border: 2px solid #114b5f;
+    border: 2px solid #114c5f1e;
     text-align: center;
     text-decoration: none;
     font-size: 16px;

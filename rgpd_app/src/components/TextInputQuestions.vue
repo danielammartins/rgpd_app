@@ -1,17 +1,11 @@
 <template>
   <p>
-    A batata é o melhor ingrediente do mundo?
+    O puré de batata congelado é merda?
   </p>
   <br>
   <form>
     <div class="form-container">
-      <input type="radio" id="yes" name="yesOrNo" value="Yes">
-      <label for="yes">  Sim</label>
-    </div>
-    <br>
-    <div class="form-container">
-      <input type="radio" id="no" name="yesOrNo" value="No">
-      <label for="no">  Não</label>
+      <input type="text" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui">
     </div>
     <br>
     <div class="form-container">
@@ -29,6 +23,7 @@
   .form-container {
     width: 100%;
   }
+
 </style>
   
 <script>

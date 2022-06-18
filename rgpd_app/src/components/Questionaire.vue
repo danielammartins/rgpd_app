@@ -39,9 +39,10 @@ export default {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 75vw;
+    width: 85vw;
     height: fit-content;
     margin: auto;
-    margin-top: 35vh;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
   }
 </style>

@@ -1,5 +1,6 @@
 <script>
 import YesOrNo from './yesOrNoQuestions.vue'
+import TextInputQuestions from './TextInputQuestions.vue'
 
 export default {
   data() {
@@ -12,6 +13,7 @@ export default {
   },
   components: {
     "yes-no": YesOrNo,
+    "text-input": TextInputQuestions
   }
 }
 
@@ -19,7 +21,7 @@ export default {
 
 <template>
   <div class="cont">
-    <yes-no></yes-no>
+    <text-input></text-input>
   </div>
 </template>
 

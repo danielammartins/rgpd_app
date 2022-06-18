@@ -4,15 +4,15 @@ export default {
     inQuestions: Boolean
   },
   methods: {
-    toggle() {
-      this.$emit('toggleInQuestions');
+    leave() {
+      this.$emit('leave');
     }
   }
 }
 </script>
 
 <template>
-  <button class="btnSair" type="button" @click="toggle()">Sair</button>
+  <button class="btnSair" type="button" @click="leave()">Sair</button>
 
 </template>
 

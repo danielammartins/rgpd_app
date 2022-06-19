@@ -18,5 +18,3 @@ db.connect(function(err) {
 app.listen(port, () => {
   console.log(`rgpd-api listening at http://localhost:${port}`)
 });
-
-app.get

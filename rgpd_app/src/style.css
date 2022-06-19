@@ -5,6 +5,10 @@
   font-family: monospace;
 }
 
+/*
+body {
+  background-image: url('assets/background.png');
+}*/
 a {
   text-decoration: none;
   color: black;

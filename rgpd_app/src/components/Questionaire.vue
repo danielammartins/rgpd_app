@@ -28,7 +28,9 @@ export default {
 <template>
   <div class="container">
     <questions></questions>
-    <text-editor></text-editor>
+    <div class="editor-container">
+      <text-editor></text-editor>
+    </div>
   </div>
 </template>
 
@@ -44,5 +46,12 @@ export default {
     margin: auto;
     margin-top: 25vh;
     margin-bottom: 25vh;
+  }
+
+  .editor-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
   }
 </style>

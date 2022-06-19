@@ -8,7 +8,7 @@ let dateTime = null;
 const content = ref({});
 
 const getContent = async () => {
-  const response = await fetch('http://localhost:3011/delta/delta');
+  const response = await fetch('http://localhost:3011/content');
   const json = await response.json();
 
   content.value = JSON.parse(json);
@@ -43,12 +43,6 @@ const setContent = async () => {
   <QuillEditor v-model:content="content" toolbar="#custom-toolbar">
     <template #toolbar>
       <div id="custom-toolbar">
-        <select class="ql-size">
-          <option value="small"></option>
-          <option selected></option>
-          <option value="large"></option>
-          <option value="huge"></option>
-        </select>
         <select class="ql-header">
           <option :value="1"></option>
           <option :value="2"></option>
@@ -61,9 +55,6 @@ const setContent = async () => {
         <button class="ql-bold"></button>
         <button class="ql-italic"></button>
         <button class="ql-underline"></button>
-        <button class="ql-strike"></button>
-        <button class="ql-script" value="sub"></button>
-        <button class="ql-script" value="super"></button>
         <select class="ql-align">
           <option selected></option>
           <option value="center"></option>
@@ -72,10 +63,7 @@ const setContent = async () => {
         </select>
         <button class="ql-list" value="ordered"></button>
         <button class="ql-list" value="bullet"></button>
-        <button class="ql-blockquote"></button>
-        <button class="ql-code-block"></button>
         <button class="ql-link"></button>
-        <button class="ql-image"></button>
         <button id="your-button" @click="setContent()">Save</button>
       </div>
     </template>

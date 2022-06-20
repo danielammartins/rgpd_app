@@ -2,20 +2,28 @@
 import { ref, onMounted } from 'vue'
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
+import { getText, updateText } from '../services/EditorServices'
 
 let dateTime = null;
 
 const content = ref({});
 
 const getContent = async () => {
-  const response = await fetch('http://localhost:3011/content');
+  /*
+  const response = await fetch('http://localhost:3011/api/text');
   const json = await response.json();
 
   content.value = JSON.parse(json);
+
+  console.log("Resposta" + content.value);*/
+  const data = await fetch('http://localhost:3011/api/text').then(res => res.json());
+
+  console.log(data);
 };
 
-onMounted(getContent);
 
+//onMounted(getContent);
+/*
 const setContent = async () => {
   await fetch('http://localhost:3011/delta/delta', {
     method: 'PUT',
@@ -26,16 +34,19 @@ const setContent = async () => {
   });
 
   await getContent();
+ 
+  alert('Conteúdo atualizado com sucesso!');
+};*/
 
-  // Gets current date; should be it's own function
+const updateTime =  () => {
   let current = new Date();
   let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
   let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
-  dateTime = cDate + ' ' + cTime;
   
-  alert('Conteúdo atualizado com sucesso!');
-};
+  dateTime = cDate + ' ' + cTime;
 
+  console.log("Updated time: " + dateTime);
+}
 
 </script>
 
@@ -64,7 +75,7 @@ const setContent = async () => {
         <button class="ql-list" value="ordered"></button>
         <button class="ql-list" value="bullet"></button>
         <button class="ql-link"></button>
-        <button id="your-button" @click="setContent()">Save</button>
+        <button type="button" id="your-button" @click="() => {getContent(); updateTime()}">Save</button>
       </div>
     </template>
   </QuillEditor>

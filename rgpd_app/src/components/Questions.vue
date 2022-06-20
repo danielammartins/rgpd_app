@@ -21,8 +21,8 @@ export default {
 
 <template>
   <div class="cont">
-    <text-input></text-input>
-  </div>
+    <yes-no></yes-no>
+</div>
 </template>
 
 <style scoped>

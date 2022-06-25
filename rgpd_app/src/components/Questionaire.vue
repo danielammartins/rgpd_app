@@ -31,6 +31,7 @@ export default {
     <div class="editor-container">
       <text-editor></text-editor>
     </div>
+    {{ timestamp }}
   </div>
 </template>
 
@@ -53,5 +54,15 @@ export default {
     padding-right: 20px;
     width: 100%;
     height: 100%;
+  }
+
+  @media screen and (max-width:600px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .editor-container {
+      padding-top: 20px;
+    }
   }
 </style>

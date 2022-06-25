@@ -1,11 +1,23 @@
 <script>
 export default {
+  data() {
+    return {
+      timestamp: this.generateTimestamp()
+    }
+  },
   props: {
     inQuestions: Boolean
   },
   methods: {
     toggle() {
       this.$emit('toggleInQuestions');
+    },
+    generateTimestamp() {
+      let current = new Date();
+      let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+      let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds() + ":" + current.getMilliseconds();
+  
+      return (cDate + '.' + cTime);
     }
   }
 }

@@ -35,6 +35,7 @@ const getContent = async () => {
     console.log(content.value);
   }
 };
+
 onMounted(getContent);
 
 const setContent = async () => {
@@ -52,10 +53,18 @@ const setContent = async () => {
   });
 
   await getContent();
+
+  // DEV o conteúdo está aqui!! Vai buscar o que está no editor e guarda logo na BD
+  console.log(JSON.stringify(content.value))
  
   alert('Conteúdo atualizado com sucesso!');
 };
 
+const test = () => {
+  setContent();
+}
+
+// FIXME
 const updateTime =  () => {
   let current = new Date();
   let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
@@ -150,6 +159,7 @@ const updateTime =  () => {
   <!-- Tem de ir buscar a data do último update -->
   <p id="lastUpdate">Última atualização: {{ dateTime }}</p>
 
+  <button @click="test()">Gerar Markdown</button>
 </template>
 
 <style>

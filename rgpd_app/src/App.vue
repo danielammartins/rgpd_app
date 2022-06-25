@@ -11,7 +11,8 @@ export default {
   name: 'app',
   data() {
     return {
-      inQuestions: false
+      inQuestions: false, 
+      timestamp: ""
     }
   },
   methods: {

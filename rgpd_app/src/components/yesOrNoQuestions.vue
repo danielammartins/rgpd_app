@@ -1,6 +1,14 @@
+<script>
+export default {
+  props: {
+    question: String
+  }
+}
+</script>
+
 <template>
   <p>
-    A batata é o melhor ingrediente do mundo?
+    {{ this.question }}
   </p>
   <br>
   <form>
@@ -15,19 +23,39 @@
     </div>
     <br>
     <div class="form-container">
-      <input type="submit" value="Submit">
+      <button >Submit</button>
     </div>
   </form>
 
 </template>
 
-<style>
+<style scoped>
   form {
     width: 100%;
   }
 
   .form-container {
     width: 100%;
+  }
+
+  .form-container button {
+    background-color: white;
+    color: black;
+    border: 2px solid #114c5f1e;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 16px 32px;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .form-container button:hover {
+    background-color: #114b5f;
+    color: white;
   }
 </style>
   

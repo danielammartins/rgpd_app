@@ -1,0 +1,39 @@
+{
+  "questions" : [
+    {
+      "question": "Question 1 - A batata é superior à massa?",
+      "yes": "2",
+      "no": "1.1",
+      "type": 0,
+      "text" : ""
+    },
+    {
+      "question": "Question 2",
+      "yes": "1.1.1",
+      "no": "1.2",
+      "type": 0,
+      "text" : ""
+    },
+    {
+      "question": "Question 3",
+      "yes": "2",
+      "no": "1.2",
+      "type": 0,
+      "text" : ""
+    },
+    {
+      "question": "Question 4",
+      "yes": "2",
+      "no": "0",
+      "type": 0,
+      "text" : ""
+    },
+    {
+      "question": "Question 4",
+      "yes": "3",
+      "no": "3",
+      "type": 0,
+      "text" : "This is random text 1"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 <script>
 import Questions from './Questions.vue'
 import TextEditor from './TextEditor.vue'
+import { ref } from 'vue'
 
 export default {
   name: 'app',
@@ -22,12 +23,17 @@ export default {
     "text-editor": TextEditor
   }
 }
+
+const quizCompleted = ref(false);
+
 </script>
 
 
 <template>
-  <div class="container">
-    <questions></questions>
+  <div class="container" v-if="!quizCompleted">
+    <div class="questions-container">
+      <questions></questions>
+    </div>
     <div class="editor-container">
       <text-editor></text-editor>
     </div>
@@ -54,6 +60,12 @@ export default {
     padding-right: 20px;
     width: 100%;
     height: 100%;
+  }
+
+  .questions-container {
+    border: 2px solid green;
+    font-size: 1.3rem;
+    padding: 20px;
   }
 
   @media screen and (max-width:600px) {

@@ -16,8 +16,8 @@ export default {
     }
   },
   methods: {
-    toggle() {
-      this.inQuestions = !this.inQuestions
+    toggleQuestions() {
+      this.inQuestions = !this.inQuestions;
     },
     leave() {
       this.inQuestions = false;
@@ -40,10 +40,10 @@ export default {
     <app-header :inQuestions="this.inQuestions" @leave="leave()"></app-header>
 
     <section v-if="!inQuestions">
-      <home-btns :inQuestions="false" @toggleInQuestions="toggle()"></home-btns>
+      <home-btns :inQuestions="false" @toggleInQuestions="toggleQuestions()"></home-btns>
     </section>
 
-    <section v-if="inQuestions">
+    <section v-if="inQuestions" id="questionaire-section">
       <questionaire></questionaire>
     </section>
 
@@ -100,5 +100,9 @@ export default {
   .container {
     display: flex;
     flex-direction: row;
+  }
+
+  #questionaire-section {
+    height: fit-content;
   }
 </style>

@@ -42,7 +42,7 @@ export default {
   .form-container button {
     background-color: white;
     color: black;
-    border: 2px solid #114c5f1e;
+    border: 2px solid #114c5f57;
     border-radius: 4px;
     text-align: center;
     text-decoration: none;

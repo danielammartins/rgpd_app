@@ -46,7 +46,7 @@ const checkType = () => {
 
   <!-- Only one should be loaded at the time, depending on the type of the current question-->
   <!-- This is for a text input question -->
-  <text-input></text-input>
+  <!--<text-input></text-input>-->
 
   <!-- This is for a yes/no question -->
   <yes-no :question="getCurrentQuestion()"></yes-no>

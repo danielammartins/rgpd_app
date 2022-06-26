@@ -64,6 +64,16 @@ const test = () => {
   setContent();
 }
 
+const copyContent = () => {
+  setContent();
+
+  var text = JSON.stringify(content.value);
+
+  navigator.clipboard.writeText(text);
+
+  alert("Texto copiado!");
+}
+
 // FIXME
 const updateTime =  () => {
   let current = new Date();
@@ -73,7 +83,7 @@ const updateTime =  () => {
   dateTime.value = cDate + ' ' + cTime;
 
   console.log("Updated time: " + dateTime.value);
-}
+};
 
 </script>
 
@@ -103,6 +113,7 @@ const updateTime =  () => {
         <button class="ql-list" value="bullet"></button>
         <button class="ql-link"></button>
         <button type="button" id="your-button" @click="() => {setContent(); updateTime()}">Save</button>
+        <button type="button" id="your-button" @click="copyContent()">Copy to Clipboard</button>
       </div>
     </template>
   </QuillEditor>
@@ -165,6 +176,24 @@ const updateTime =  () => {
 <style>
   #lastUpdate {
     padding-top: 15px;
+  }
+
+  #your-button {
+    width: fit-content;
+    background-color: white;
+    color: black;
+    border: 1px solid #114c5f1e;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    margin-right: 8px;
+  }
+
+  #your-button:hover {
+    background-color: #114b5f;
+    color: white;
+    font-weight: bold;
   }
 </style>
 

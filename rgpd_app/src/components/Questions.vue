@@ -2,7 +2,6 @@
 import YesOrNo from './yesOrNoQuestions.vue'
 import TextInputQuestions from './TextInputQuestions.vue'
 import questions from "../assets/questions.json";
-import { ref, computed } from 'vue'
 
 export default {
   data() {
@@ -33,7 +32,6 @@ export default {
 }
 
 const checkType = () => {
-  console.log("oi")
   // If question has type 0, it's a yes/no question. 
   if(this.questions.questions[questionIndex].type == 0) 
     this.questionType = 0;
@@ -45,5 +43,13 @@ const checkType = () => {
 </script>
 
 <template>
+
+  <!-- Only one should be loaded at the time, depending on the type of the current question-->
+  <!-- This is for a text input question -->
+  <text-input></text-input>
+
+  <!-- This is for a yes/no question -->
   <yes-no :question="getCurrentQuestion()"></yes-no>
+
+  <!-- IDEIA: o botão de submeter podia estar aqui em vez de nos componentes, e assim ativava logo o nextQuestion. Dentro do nextQuestion é que verificava o tipo de questão. Ou pode estar nos componentes e emitir um evento daqui -->
 </template>

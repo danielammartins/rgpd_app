@@ -22,10 +22,8 @@ export default {
       alert(nextQ)
       if (nextQ != 0) {
         const data = await (await fetch(`http://localhost:3011/question/${nextQ}`)).json();
-        this.question = data;
+        this.question = data
       } else {
-        console.log()
-        
         this.$emit("finish")
       }
     }

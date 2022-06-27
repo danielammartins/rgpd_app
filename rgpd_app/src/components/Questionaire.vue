@@ -94,6 +94,16 @@ const quizCompleted = ref(false);
     
   </section>
 
+  <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
+    <div class="questions-container">
+      <questions @finish="finish"></questions>
+    </div>
+    <div class="editor-container">
+      <text-area></text-area>
+    </div>
+    {{ timestamp }}
+  </div>
+    
 
 </template>
 

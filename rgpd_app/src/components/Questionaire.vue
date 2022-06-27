@@ -27,6 +27,9 @@ export default {
     },
     leave() {
       this.inQuestions = false;
+    },
+    downloadPT() {
+      alert(document.getElementById('text-area').innerHTML);
     }
   },
   components: {
@@ -61,6 +64,17 @@ const quizCompleted = ref(false);
     <button @click="toggleWelcome()">Continuar</button>
   </section>
 
+  <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
+    <div class="questions-container">
+      <questions @finish="finish"></questions>
+    </div>
+    <div class="editor-container">
+      <text-area></text-area>
+    </div>
+    {{ timestamp }}
+  </div>
+    
+
   <section v-if="inFinish" class="text-section">
     <p>  
       Obrigada pela visita!
@@ -74,23 +88,12 @@ const quizCompleted = ref(false);
       Se encontrar um erro ou quiser contribuir para o desenvolvimento da plataforma, por favor crie um Issue no GitHub ou envie um email.
     </p>
     <div id="download-btn">
-      <button>Descarregar PT</button>
+      <button @click="downloadPT()">Descarregar PT</button>
       <button>Descarregar EN</button>
     </div>
     
   </section>
 
-  <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
-    <div class="questions-container">
-      <questions></questions>
-      <button id="finish" @click="finish()">Terminar Questionário</button>
-    </div>
-    <div class="editor-container">
-      <text-area></text-area>
-    </div>
-    {{ timestamp }}
-  </div>
-    
 
 </template>
 

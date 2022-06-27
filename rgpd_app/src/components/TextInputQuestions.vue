@@ -1,21 +1,20 @@
-<script setup>
+<script>
 import { ref } from 'vue'
 
-const props = defineProps({
-  modelValue: Number,
-  answer: String,
-  question: Object
-})
-
-const emit = defineEmits(['update:modelValue', 'answer'])
-
-const textInput = ref('')
-
-const submitText = () => {
-  emit('update:modelValue', Number(props?.question?.index) + 1 || 0)
-  emit('answer', textInput.value)
-};
-
+export default {
+  name: 'TextInputQuestions',
+  props: {
+    question: Object
+  },
+  methods: {
+    submitText() {
+      document.getElementById('text-area').innerHTML += this.question.text != null ? this.question.text : ''
+      document.getElementById('text-area').innerHTML += document.getElementById('tInput').value
+      document.getElementById('tInput').value = ''
+      this.$emit("answer", this.question.yes)
+    }
+  }
+}
 </script>
 
 <template>
@@ -23,20 +22,20 @@ const submitText = () => {
     {{ question.question }}
   </p>
   <br>
-  <form @submit.prevent="submitText">
+  <div class="form">
     <div class="form-container">
-      <input type="text" v-model="textInput" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui">
+      <input type="text" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui" @keyup.enter="submitText()">
     </div>
     <br>
     <div class="form-container">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" @click="submitText()">
     </div>
-  </form>
+  </div>
 
 </template>
 
 <style>
-  form {
+  .form {
     width: 100%;
   }
 

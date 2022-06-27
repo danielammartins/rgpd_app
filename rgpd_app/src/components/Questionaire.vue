@@ -71,10 +71,8 @@ const quizCompleted = ref(false);
     <div class="editor-container">
       <text-area></text-area>
     </div>
-    {{ timestamp }}
   </div>
     
-
   <section v-if="inFinish" class="text-section">
     <p>  
       Obrigada pela visita!
@@ -93,17 +91,6 @@ const quizCompleted = ref(false);
     </div>
     
   </section>
-
-  <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
-    <div class="questions-container">
-      <questions @finish="finish"></questions>
-    </div>
-    <div class="editor-container">
-      <text-area></text-area>
-    </div>
-    {{ timestamp }}
-  </div>
-    
 
 </template>
 

@@ -1,11 +1,31 @@
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  modelValue: Number,
+  answer: String,
+  question: Object
+})
+
+const emit = defineEmits(['update:modelValue', 'answer'])
+
+const textInput = ref('')
+
+const submitText = () => {
+  emit('update:modelValue', Number(props?.question?.index) + 1 || 0)
+  emit('answer', textInput.value)
+};
+
+</script>
+
 <template>
   <p>
-    O puré de batata congelado é merda?
+    {{ question.question }}
   </p>
   <br>
-  <form>
+  <form @submit.prevent="submitText">
     <div class="form-container">
-      <input type="text" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui">
+      <input type="text" v-model="textInput" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui">
     </div>
     <br>
     <div class="form-container">
@@ -23,9 +43,4 @@
   .form-container {
     width: 100%;
   }
-
 </style>
-  
-<script>
-
-</script>

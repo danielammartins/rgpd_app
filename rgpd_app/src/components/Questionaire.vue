@@ -1,7 +1,6 @@
 <script>
 import Questions from './Questions.vue'
-import TextEditor from './TextEditor.vue'
-import Welcome from './Welcome.vue'
+import TextArea from './TextArea.vue'
 import { ref } from 'vue'
 
 export default {
@@ -32,8 +31,7 @@ export default {
   },
   components: {
     "questions": Questions,
-    "text-editor": TextEditor,
-    "welcome": Welcome
+    "text-area": TextArea
   }
 }
 
@@ -46,7 +44,11 @@ const quizCompleted = ref(false);
 
   <section v-if="inWelcome" class="text-section">
     <p>
-      Este questionário vai guiá-lo ao longo de um conjunto de perguntas com o objetivo de produzir uma proposta de nota informativa ou consentimento, devidamente dividida por várias secções e em concordância com o Regulamento Geral de Proteção de Dados da União Europeia. 
+      Este questionário vai guiá-lo ao longo de um conjunto de perguntas com o objetivo de compor uma proposta de nota informativa ou consentimento.
+    </p>
+    <br>
+    <p>
+      A proposta encontra-se devidamente dividida por secções e em concordância com o Regulamento Geral de Proteção de Dados da União Europeia. 
     </p>
     <br>
     <p>
@@ -65,13 +67,17 @@ const quizCompleted = ref(false);
     </p>
     <br>
     <p>
-      Qualquer questão ou sugestão de melhoria é favor contactar daniela.madeira.martins@ubi.pt.
+      Qualquer questão ou sugestão de melhoria é favor contactar me@me.pt.
     </p>
     <br>
     <p>
       Se encontrar um erro ou quiser contribuir para o desenvolvimento da plataforma, por favor crie um Issue no GitHub ou envie um email.
     </p>
-    <button>Descarregar</button>
+    <div id="download-btn">
+      <button>Descarregar PT</button>
+      <button>Descarregar EN</button>
+    </div>
+    
   </section>
 
   <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
@@ -80,7 +86,7 @@ const quizCompleted = ref(false);
       <button id="finish" @click="finish()">Terminar Questionário</button>
     </div>
     <div class="editor-container">
-      <text-editor></text-editor>
+      <text-area></text-area>
     </div>
     {{ timestamp }}
   </div>
@@ -177,4 +183,22 @@ const quizCompleted = ref(false);
     background-color: #114b5f;
     color: white;
   }
+
+  #download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width:768px) {
+    #download-btn {
+      flex-direction: column;
+      margin: 0;
+    }
+
+    #download-btn button {
+      margin-top: 3vh;
+    }
+  }
+
 </style>

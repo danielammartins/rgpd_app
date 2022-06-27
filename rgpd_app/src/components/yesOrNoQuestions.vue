@@ -1,30 +1,40 @@
-<script>
-export default {
-  
-  props: {
-    question: String
-  }
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  modelValue: Number,
+  answer: String,
+  question: Object
+})
+
+const emit = defineEmits(['update:modelValue', 'answer'])
+
+const yesOrNo = ref('')
+
+const submitYesOrNo = () => {
+  emit('update:modelValue', Number(props?.question?.index) + 1 || 0)
+  emit('answer', yesOrNo.value)
 }
 </script>
 
 <template>
   <p>
-    {{ this.question }}
+    {{ question.question }}
   </p>
   <br>
-  <form>
+  <form @submit.prevent="submitYesOrNo">
     <div class="form-container">
-      <input type="radio" id="yes" name="yesOrNo" value="Yes">
+      <input type="radio" id="yes" name="yesOrNo" value="Yes" v-model="yesOrNo" :checked="false"/>
       <label for="yes">  Sim</label>
     </div>
     <br>
     <div class="form-container">
-      <input type="radio" id="no" name="yesOrNo" value="No">
+      <input type="radio" id="no" name="yesOrNo" value="No" v-model="yesOrNo" :checked="false"/>
       <label for="no">  Não</label>
     </div>
     <br>
     <div class="form-container">
-      <button >Submit</button>
+      <button type="submit">Submit</button>
     </div>
   </form>
 
@@ -42,7 +52,7 @@ export default {
   .form-container button {
     background-color: white;
     color: black;
-    border: 2px solid #114c5f57;
+    border: 2px solid #114c5f1e;
     border-radius: 4px;
     text-align: center;
     text-decoration: none;

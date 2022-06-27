@@ -82,8 +82,7 @@ const quizCompleted = ref(false);
 
   <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
     <div class="questions-container">
-      <questions></questions>
-      <button id="finish" @click="finish()">Terminar Questionário</button>
+      <questions @finish="finish"></questions>
     </div>
     <div class="editor-container">
       <text-area></text-area>

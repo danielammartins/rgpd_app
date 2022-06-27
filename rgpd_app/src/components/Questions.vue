@@ -14,6 +14,8 @@ const allQuestions = ref(JsonQuestions.questions.map((item, index) => {
   return item
 }));
 
+
+
 const emit = defineEmits(['finish']);
 
 const currectQuestion = ref(allQuestions.value[0]);

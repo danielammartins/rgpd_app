@@ -1,6 +1,7 @@
 <script>
 import Questions from './Questions.vue'
 import TextArea from './TextArea.vue'
+import { saveAs } from 'file-saver';
 
 export default {
   name: 'app',
@@ -8,8 +9,15 @@ export default {
     return {
       inQuestions: false,
       inWelcome: true,
-      inFinish: false
+      inFinish: false,
+      finalText: "",
+      rgpdNotApplicable: false
     }
+  },
+  mounted() {
+    let externalScript = document.createElement('script')
+    externalScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js')
+    document.head.appendChild(externalScript)
   },
   methods: {
     toggle() {
@@ -19,16 +27,32 @@ export default {
       this.inWelcome = !this.inWelcome;
       this.toggle();
     },
-    finish() {
+    finish(text) {
       this.inWelcome = false;
       this.inQuestions = false;
       this.inFinish = true;
+      this.finalText = text;
     },
     leave() {
       this.inQuestions = false;
     },
     downloadPT() {
-      alert(document.getElementById('text-area').innerHTML);
+      var blob = new Blob([this.finalText], { type: "text/plain;charset=utf-8"});
+      saveAs(blob, "pt.txt");
+    },
+    downloadEN() {
+      let originalLang = "PT"
+      let targetLang = "EN";
+
+      let test = "Eu vi um sapo."
+      let apiURL = "https://api.mymemory.translated.net/get?q=" + test + "&langpair=" + originalLang + "|" + targetLang;
+
+      fetch(apiURL).then(res => res.json()).then(data => {
+        console.log(data);
+      })
+    },
+    toggleRGPD() {
+        this.rgpdNotApplicable = true;
     }
   },
   components: {
@@ -38,7 +62,6 @@ export default {
 }
 
 </script>
-
 
 <template>
 
@@ -63,7 +86,7 @@ export default {
 
   <div class="container" v-if="!inWelcome && !quizCompleted && inQuestions">
     <div class="questions-container">
-      <questions @finish="finish"></questions>
+      <questions @finish="finish" @toggleRGPD="toggleRGPD"></questions>
     </div>
     <div class="editor-container">
       <text-area></text-area>
@@ -71,6 +94,9 @@ export default {
   </div>
     
   <section v-if="inFinish" class="text-section">
+    <p v-if="rgpdNotApplicable" id="rgpd-not">
+      O Regulamento Geral de Proteção de Dados não se aplica ao seu tratamento. Consulte o Artigo 9º do RGPD.
+    </p>
     <p>  
       Obrigada pela visita!
     </p>
@@ -84,7 +110,7 @@ export default {
     </p>
     <div id="download-btn">
       <button @click="downloadPT()">Descarregar PT</button>
-      <button>Descarregar EN</button>
+      <button @click="downloadEN()">Descarregar EN</button>
     </div>  
     
   </section>
@@ -196,4 +222,7 @@ export default {
     }
   }
 
+  #rgpd-not {
+    font-weight: bold;
+  }
 </style>

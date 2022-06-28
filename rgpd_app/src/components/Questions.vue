@@ -15,12 +15,12 @@ export default {
   },
   methods: {
     async answer(nextQ) {
-      alert(nextQ)
       if (nextQ != 0) {
         const data = await (await fetch(`http://localhost:3011/question/${nextQ}`)).json();
         this.question = data
-      } else {
-        this.$emit("finish")
+      } 
+      else { 
+        this.$emit("finish", document.getElementById('text-area').innerHTML)
       }
     },
     submitText() {
@@ -42,6 +42,9 @@ export default {
         this.answer(this.question.yes);
       }
       else if (document.getElementById('no').checked) {
+        if(this.question.id == 4) {
+          this.$emit("toggleRGPD"); 
+        }
         document.getElementById('no').checked = false
         this.answer(this.question.no);
       }
@@ -56,44 +59,45 @@ export default {
   <!-- This is for a text input question -->
   <section v-if="question.type == 1">
     <p>
-    {{ question.question }}
+      {{ question.question }}
     </p>
     <br>
     <div class="form">
       <div class="form-container">
-        <input type="text" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui" @keyup.enter="submitText()">
+        <input type="text" id="tInput" name="answer" placeholder="Escreva a sua resposta aqui"
+          @keyup.enter="submitText()">
       </div>
       <br>
       <div class="form-container">
-        <input type="submit" value="Submeter"  @click="submitText()">
+        <input type="submit" value="Submeter" @click="submitText()">
       </div>
     </div>
   </section>
 
   <section v-else-if="question.type == 0">
     <p>
-    {{ question.question }}
-  </p>
-  <br>
-  <div class="form">
-    <div class="form-container">
-      <input type="radio" id="yes" name="yesOrNo" value="Yes"/>
-      <label for="yes"> Sim</label>
-    </div>
+      {{ question.question }}
+    </p>
     <br>
-    <div class="form-container">
-      <input type="radio" id="no" name="yesOrNo" value="No"/>
-      <label for="no"> Não</label>
+    <div class="form">
+      <div class="form-container">
+        <input type="radio" id="yes" name="yesOrNo" value="Yes" />
+        <label for="yes"> Sim</label>
+      </div>
+      <br>
+      <div class="form-container">
+        <input type="radio" id="no" name="yesOrNo" value="No" />
+        <label for="no"> Não</label>
+      </div>
+      <br>
+      <div class="form-container">
+        <button type="submit" @click="submitYesOrNo()">Submeter</button>
+      </div>
     </div>
-    <br>
-    <div class="form-container">
-      <button type="submit" @click="submitYesOrNo()">Submeter</button>
-    </div>
-  </div>
 
   </section>
 
-    <!--
+  <!--
   <TextInputQuestions v-if="question.type == 1" v-model="questionIndex" :question="question" @answer="answer" />
   <YesOrNo v-else-if="question.type == 0" v-model="questionIndex" :question="question" @answer="answer" />
   -->

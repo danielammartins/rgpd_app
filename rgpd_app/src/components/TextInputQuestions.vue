@@ -8,9 +8,14 @@ export default {
   },
   methods: {
     submitText() {
-      document.getElementById('text-area').innerHTML += this.question.text != null ? this.question.text : ''
-      document.getElementById('text-area').innerHTML += document.getElementById('tInput').value
-      document.getElementById('tInput').value = ''
+      document.getElementById('text-area').innerHTML += this.question.text != null ? this.question.text + '\r\n' + '\r\n' : '';
+      document.getElementById('text-area').innerHTML += document.getElementById('tInput').value;
+      document.getElementById('text-area').innerHTML += '\r\n';
+      document.getElementById('text-area').innerHTML += '\r\n';
+
+      // Clear the text input for the next question 
+      document.getElementById('tInput').value = '';
+
       this.$emit("answer", this.question.yes)
     }
   }

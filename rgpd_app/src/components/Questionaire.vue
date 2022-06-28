@@ -1,7 +1,6 @@
 <script>
 import Questions from './Questions.vue'
 import TextArea from './TextArea.vue'
-import { ref } from 'vue'
 
 export default {
   name: 'app',
@@ -37,8 +36,6 @@ export default {
     "text-area": TextArea
   }
 }
-
-const quizCompleted = ref(false);
 
 </script>
 
@@ -79,16 +76,16 @@ const quizCompleted = ref(false);
     </p>
     <br>
     <p>
-      Qualquer questão ou sugestão de melhoria é favor contactar me@me.pt.
+      Qualquer questão ou sugestão de melhoria é favor contactar daniela.madeira.martins@ubi.pt.
     </p>
     <br>
     <p>
-      Se encontrar um erro ou quiser contribuir para o desenvolvimento da plataforma, por favor crie um Issue no GitHub ou envie um email.
+      Se encontrar um erro ou quiser contribuir para o desenvolvimento da plataforma, por favor utilize o GitHub ou envie um email.
     </p>
     <div id="download-btn">
       <button @click="downloadPT()">Descarregar PT</button>
       <button>Descarregar EN</button>
-    </div>
+    </div>  
     
   </section>
 
@@ -96,7 +93,6 @@ const quizCompleted = ref(false);
 
 <style scoped>
   .container {
-    border: 2px solid purple;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -116,7 +112,6 @@ const quizCompleted = ref(false);
   }
 
   .questions-container {
-    border: 2px solid green;
     font-size: 1.3rem;
     padding: 20px;
   }

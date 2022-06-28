@@ -9,6 +9,7 @@ export default {
       if (document.getElementById('yes').checked) {
         document.getElementById('yes').checked = false
         document.getElementById('text-area').innerHTML += this.question.text != null ? this.question.text : ''
+        document.getElementById('text-area').innerHTML += '\r\n';
         this.$emit("answer", this.question.yes)
       }
       else if (document.getElementById('no').checked) {

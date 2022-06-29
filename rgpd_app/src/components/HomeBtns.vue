@@ -31,6 +31,7 @@ export default {
       Gerar Pedido de Consentimento / Nota Informativa
     </button>
 
+    <!-- FIXME passar o link para o btn por causa de targeting -->
     <button class="btnHome" id="btnConsultar">
       <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/PDF/?uri=CELEX:32016R0679&from=PT" target="_blank">
         Consultar o Regulamento Geral de Proteção de Dados

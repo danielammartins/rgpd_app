@@ -44,12 +44,6 @@ export default {
       let originalLang = "PT"
       let targetLang = "EN";
 
-      let test = "Eu vi um sapo."
-      let apiURL = "https://api.mymemory.translated.net/get?q=" + test + "&langpair=" + originalLang + "|" + targetLang;
-
-      fetch(apiURL).then(res => res.json()).then(data => {
-        console.log(data);
-      })
     },
     toggleRGPD() {
         this.rgpdNotApplicable = true;
@@ -140,6 +134,7 @@ export default {
   .questions-container {
     font-size: 1.3rem;
     padding: 20px;
+    width: 70%;
   }
 
   @media screen and (max-width:600px) {

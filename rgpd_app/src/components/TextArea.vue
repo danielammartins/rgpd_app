@@ -4,10 +4,10 @@ const copyToClipboard = () => {
 
     navigator.clipboard.writeText(text)
             .then(() => {
-              alert('Text copied to clipboard');
+              alert('Texto copiado!');
             })
             .catch(err => {
-              alert('Error in copying text: ', err);
+              alert('Erro a copiar o texto: ', err);
             });
    
 };

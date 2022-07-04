@@ -3,7 +3,6 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import HomeBtns from './components/HomeBtns.vue'
 import Questions from './components/Questions.vue'
-import TextEditor from './components/TextEditor.vue'
 import Questionaire from './components/Questionaire.vue'
 import YesOrNo from './components/yesOrNoQuestions.vue'
 
@@ -29,7 +28,6 @@ export default {
     "home-btns": HomeBtns,
     "yes-no": YesOrNo,
     "questions": Questions,
-    "text-editor": TextEditor,
     "questionaire": Questionaire
   }
 }

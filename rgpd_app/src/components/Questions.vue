@@ -223,7 +223,9 @@ export default {
     <div class="form">
       <div class="form-container">
         <!-- FIXME devia ser uma textarea -->
-        <input type="text" id="tInput" name="answer" required placeholder="Escreva a sua resposta aqui"
+        
+
+        <input type="text" id="tInput" name="answer" :value="question.tfValue" required placeholder="Escreva a sua resposta aqui"
           @keyup.enter="submitText()">
       </div>
       <br>
@@ -233,6 +235,7 @@ export default {
     </div>
   </section>
 
+  <!-- This is for a y/n question -->
   <section v-else-if="question.type == 0">
     <p>
       {{ question.question }}

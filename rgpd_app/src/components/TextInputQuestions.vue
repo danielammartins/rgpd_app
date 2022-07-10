@@ -1,13 +1,15 @@
 <script>
-import { ref } from 'vue'
-
 export default {
   name: 'TextInputQuestions',
   props: {
     question: Object
   },
+  mounted() {
+    alert(this.question.number);
+  },  
   methods: {
     submitText() {
+      con(this.question.number);
       document.getElementById('text-area').innerHTML += this.question.text != null ? this.question.text + '\r\n' + '\r\n' : '';
       document.getElementById('text-area').innerHTML += document.getElementById('tInput').value;
       document.getElementById('text-area').innerHTML += '\r\n';

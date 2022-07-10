@@ -10,13 +10,13 @@ export default {
   },
   // Loading the questions before the component is added to the DOM to avoid delays in loading the first question
   async beforeCreate() {
-    const data = await (await fetch(`http://localhost:3011/question/1`)).json();
+    const data = await (await fetch(`https://localhost:3011/question/1`)).json();
     this.question = data
   },
   methods: {
     async answer(nextQ) {
       if (nextQ != 0) {
-        const data = await (await fetch(`http://localhost:3011/question/${nextQ}`)).json();
+        const data = await (await fetch(`https://localhost:3011/question/${nextQ}`)).json();
         this.question = data
       } 
       else { 

@@ -17,14 +17,14 @@
 }*/
 
 export async function getText() {
-  const response = await fetch('http://localhost:3011/api/text');
+  const response = await fetch('https://localhost:3011/api/text');
   const json = await response.json();
 
   content.value = JSON.parse(json);
 }
 
 export async function updateText() {
-  await fetch('http://localhost:3011/api/text', {
+  await fetch('https://localhost:3011/api/text', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

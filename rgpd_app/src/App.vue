@@ -35,7 +35,7 @@ export default {
 
 <template>
   <div id="app">
-    <app-header :inQuestions="this.inQuestions" @leave="leave()"></app-header>
+    <app-header v-if="inQuestions" :inQuestions="this.inQuestions" @leave="leave()"></app-header>
 
     <section v-if="!inQuestions">
       <home-btns :inQuestions="false" @toggleInQuestions="toggleQuestions()"></home-btns>

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "file-saver": "^2.0.5",
+    "fs": "^0.0.1-security",
     "vue": "^3.2.25",
     "vuex": "^4.0.2"
   },

@@ -13,7 +13,6 @@ export default {
 
 <template>
   <button class="btnSair" type="button" @click="leave()">Sair</button>
-
 </template>
 
 <style>

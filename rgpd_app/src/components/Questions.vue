@@ -55,6 +55,9 @@ export default {
             document.getElementById('text-area').innerHTML += "SECÇÃO III - Licitude do Tratamento dos Dados";
             document.getElementById('text-area').innerHTML += '\r\n';
           }
+          if(this.question.id == 11 || this.question.id == 12) 
+            document.getElementById('text-area').innerHTML += '\r\n';
+
           document.getElementById('yes').checked = false
           document.getElementById('text-area').innerHTML += this.question.text != null ? this.question.text : ''
           document.getElementById('text-area').innerHTML += '\r\n';
@@ -67,7 +70,7 @@ export default {
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO DE ACESSO";
             document.getElementById('text-area').innerHTML += '\r\n';
-            document.getElementById('text-area').innerHTML += "O titular dos dados tem, de acordo com o Artigo 15º, direito de obter do responsável pelo tratamento a confirmação de que os dados pessoais que lhe digam respeito são ou não objecto de tratamento. Se for o caso, o titulare dos dados tem também o direito de aceder aos seus dados e às informações mencionadas no referido artigo";
+            document.getElementById('text-area').innerHTML += "O titular dos dados tem, de acordo com o Artigo 15º, direito de obter do responsável pelo tratamento a confirmação de que os dados pessoais que lhe digam respeito são ou não objecto de tratamento. Se for o caso, o titular dos dados tem também o direito de aceder aos seus dados e às informações mencionadas no referido artigo";
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO AO ESQUECIMENTO";
@@ -82,7 +85,7 @@ export default {
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO À LIMITAÇÃO DO TRATAMENTO";
             document.getElementById('text-area').innerHTML += '\r\n';
-            document.getElementById('text-area').innerHTML += "O titular dos dados tem o direito de obter do responsável a limitação do tratamento, se se aplicar qualquer uma das condições previstar no Artigo 18º.";
+            document.getElementById('text-area').innerHTML += "O titular dos dados tem o direito de obter do responsável a limitação do tratamento, se se aplicar qualquer uma das condições previstas no Artigo 18º.";
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO À RETIFICAÇÃO";
@@ -115,7 +118,7 @@ export default {
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO DE ACESSO";
             document.getElementById('text-area').innerHTML += '\r\n';
-            document.getElementById('text-area').innerHTML += "O titular dos dados tem, de acordo com o Artigo 15º, direito de obter do responsável pelo tratamento a confirmação de que os dados pessoais que lhe digam respeito são ou não objecto de tratamento. Se for o caso, o titulare dos dados tem também o direito de aceder aos seus dados e às informações mencionadas no referido artigo";
+            document.getElementById('text-area').innerHTML += "O titular dos dados tem, de acordo com o Artigo 15º, direito de obter do responsável pelo tratamento a confirmação de que os dados pessoais que lhe digam respeito são ou não objecto de tratamento. Se for o caso, o titular dos dados tem também o direito de aceder aos seus dados e às informações mencionadas no referido artigo";
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO AO ESQUECIMENTO";
@@ -130,7 +133,7 @@ export default {
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO À LIMITAÇÃO DO TRATAMENTO";
             document.getElementById('text-area').innerHTML += '\r\n';
-            document.getElementById('text-area').innerHTML += "O titular dos dados tem o direito de obter do responsável a limitação do tratamento, se se aplicar qualquer uma das condições previstar no Artigo 18º.";
+            document.getElementById('text-area').innerHTML += "O titular dos dados tem o direito de obter do responsável a limitação do tratamento, se se aplicar qualquer uma das condições previstas no Artigo 18º.";
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO À RETIFICAÇÃO";
@@ -158,7 +161,7 @@ export default {
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO DE ACESSO";
             document.getElementById('text-area').innerHTML += '\r\n';
-            document.getElementById('text-area').innerHTML += "O titular dos dados tem, de acordo com o Artigo 15º, direito de obter do responsável pelo tratamento a confirmação de que os dados pessoais que lhe digam respeito são ou não objecto de tratamento. Se for o caso, o titulare dos dados tem também o direito de aceder aos seus dados e às informações mencionadas no referido artigo";
+            document.getElementById('text-area').innerHTML += "O titular dos dados tem, de acordo com o Artigo 15º, direito de obter do responsável pelo tratamento a confirmação de que os dados pessoais que lhe digam respeito são ou não objecto de tratamento. Se for o caso, o titular dos dados tem também o direito de aceder aos seus dados e às informações mencionadas no referido artigo";
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO AO ESQUECIMENTO";
@@ -173,7 +176,7 @@ export default {
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO À LIMITAÇÃO DO TRATAMENTO";
             document.getElementById('text-area').innerHTML += '\r\n';
-            document.getElementById('text-area').innerHTML += "O titular dos dados tem o direito de obter do responsável a limitação do tratamento, se se aplicar qualquer uma das condições previstar no Artigo 18º.";
+            document.getElementById('text-area').innerHTML += "O titular dos dados tem o direito de obter do responsável a limitação do tratamento, se se aplicar qualquer uma das condições previstas no Artigo 18º.";
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "DIREITO À RETIFICAÇÃO";
@@ -201,7 +204,6 @@ export default {
             document.getElementById('text-area').innerHTML += "SECÇÃO I - Identificação do Responsável pelo Tratamento dos Dados";
         }
         if(this.question.id == 6) {
-            document.getElementById('text-area').innerHTML += '\r\n';
             document.getElementById('text-area').innerHTML += "SECÇÃO II - Finalidade do Tratamento dos Dados";
         }
       }
@@ -213,7 +215,6 @@ export default {
 </script>
 
 <template>
-
   <!-- This is for a text input question -->
   <section v-if="question.type == 1">
     <p>
@@ -222,25 +223,20 @@ export default {
     <br>
     <div class="form">
       <div class="form-container">
-        <!-- FIXME devia ser uma textarea -->
-        
-
-        <input type="text" id="tInput" name="answer" :value="question.tfValue" required placeholder="Escreva a sua resposta aqui"
+        <input type="text" id="tInput" name="answer" 
+        :value="question.tfValue" required placeholder="Escreva a sua resposta aqui"
           @keyup.enter="submitText()">
-      </div>
-      <br>
+      </div> <br>
       <div class="form-container">
         <input type="submit" value="Submeter" @click="submitText()">
       </div>
     </div>
   </section>
-
   <!-- This is for a y/n question -->
   <section v-else-if="question.type == 0">
     <p>
       {{ question.question }}
-    </p>
-    <br>
+    </p><br>
     <div class="form">
       <div class="form-container">
         <input type="radio" id="yes" name="yesOrNo" value="Yes" />
@@ -256,14 +252,7 @@ export default {
         <button type="submit" @click="submitYesOrNo()">Submeter</button>
       </div>
     </div>
-
   </section>
-
-  <!--
-  <TextInputQuestions v-if="question.type == 1" v-model="questionIndex" :question="question" @answer="answer" />
-  <YesOrNo v-else-if="question.type == 0" v-model="questionIndex" :question="question" @answer="answer" />
-  -->
-
   <div v-else @load="this.emit('finish')"></div>
 </template>
 

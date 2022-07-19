@@ -18,7 +18,6 @@ const copyToClipboard = () => {
     <textarea id="text-area" name="text-area" placeholder="Pode editar o seu texto aqui!"></textarea>
     <button id="copy-btn" @click="copyToClipboard()">Copiar</button>
   </div>
-
 </template>
 
 <style scoped>

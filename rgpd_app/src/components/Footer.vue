@@ -8,6 +8,7 @@
         </p>
   </footer>
 </template>
+
 <style>
 footer {
   background-color:#114b5f;

@@ -40,10 +40,21 @@ export default {
       var blob = new Blob([this.finalText], { type: "text/plain;charset=utf-8"});
       saveAs(blob, "pt.txt");
     },
-    downloadEN() {
-      let originalLang = "PT"
-      let targetLang = "EN";
+    async downloadEN() {
+      const text = await fetch("https://api-free.deepl.com/v2/translate", {
+        body: "auth_key=d28fbfff-dec4-c45f-c65c-83df20cb17e0:fx&text=" + this.finalText + "&target_lang=EN",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        method: "POST"
+      });
 
+      const jsonText = await text.json();
+
+      const translated = jsonText.translations[0].text;
+
+      var blob = new Blob([translated], { type: "text/plain;charset=utf-8"});
+      saveAs(blob, "en.txt");  
     },
     toggleRGPD() {
         this.rgpdNotApplicable = true;
@@ -102,7 +113,7 @@ export default {
     <p>
       Se encontrar um erro ou quiser contribuir para o desenvolvimento da plataforma, por favor utilize o GitHub ou envie um email.
     </p>
-    <div id="download-btn">
+    <div v-if="!rgpdNotApplicable" id="download-btn">
       <button @click="downloadPT()">Descarregar PT</button>
       <button @click="downloadEN()">Descarregar EN</button>
     </div>  
